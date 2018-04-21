@@ -19,17 +19,15 @@ class RadioBody extends Component {
               this.setState({
                 checked: e.target.getAttribute("data-value")
               });
-              console.log(e.target.dataset.value);
             }}
-            data-value={name}
           >
             <input
               type="radio"
-              name={name}
+              name={label}
               value={name}
-              checked={this.state.checked === name}
+              checked={this.state.checked === label}
             />
-            <label>{label}</label>
+            <label data-value={label}>{label}</label>
           </div>
         ))}
       </div>

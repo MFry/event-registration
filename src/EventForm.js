@@ -7,7 +7,7 @@ import Input from "muicss/lib/react/input";
 import Panel from "muicss/lib/react/panel";
 import Divider from "muicss/lib/react/divider";
 import RadioBody from "./Radio";
-import "./materialRadioButton.css";
+import "./material-form.css";
 
 class EventForm extends Component {
   constructor(props) {
@@ -36,7 +36,11 @@ class EventForm extends Component {
             <Row>
               <Col md="8" />
               <Col md="4">
-                <Button variant="raised" type="submit">
+                <Button
+                  style={{ float: "right" }}
+                  variant="raised"
+                  type="submit"
+                >
                   Submit
                 </Button>
               </Col>
