@@ -4,7 +4,7 @@
 $md-radio-checked-color: rgb(51, 122, 183);
 $md-radio-border-color: rgba(0, 0, 0, 0.54);
 $md-radio-size: 20px;
-$md-radio-checked-size: 10px;
+$md-radio-checked-size: 20px;
 $md-radio-ripple-size: 15px;
 /* Animation */
 @keyframes ripple {
@@ -34,7 +34,7 @@ $md-radio-ripple-size: 15px;
       animation: ripple 0.2s linear forwards;
     }
     &:checked + label:after {
-      transform: scale(1);
+      transform: scale(0.5);
     }
   }
 
@@ -48,6 +48,8 @@ $md-radio-ripple-size: 15px;
     vertical-align: bottom;
     &:before,
     &:after {
+      //Inner circle
+      box-sizing: border-box;
       position: absolute;
       content: "";
       border-radius: 50%;
