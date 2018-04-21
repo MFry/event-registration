@@ -1,10 +1,13 @@
 import React, { Component } from "react";
+import Row from "muicss/lib/react/row";
+import Col from "muicss/lib/react/col";
 import Form from "muicss/lib/react/form";
-import Radio from "muicss/lib/react/radio";
 import Button from "muicss/lib/react/button";
 import Input from "muicss/lib/react/input";
 import Panel from "muicss/lib/react/panel";
-import Col from "muicss/lib/react/col";
+import Divider from "muicss/lib/react/divider";
+import RadioBody from "./Radio";
+import "./materialRadioButton.css";
 
 class EventForm extends Component {
   constructor(props) {
@@ -30,29 +33,44 @@ class EventForm extends Component {
         </header>
         <Panel>
           <Form onSubmit={() => this.handleSubmit}>
-            <br />
-            <Col md="8">
-              <legend>Description</legend>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: this.state.form.description
-                }}
-              />
-            </Col>
-            <Col md="4">
-              <Radio name="register" label="Lead" />
-              <Radio name="register" label="Follow" />
-              <Radio name="register" label="Both" />
-
-              <Input
-                label="Email Address"
-                type="email"
-                defaultValue="Validation error"
-              />
-            </Col>
-            <Button variant="raised" type="submit">
-              Submit
-            </Button>
+            <Row>
+              <Col md="8" />
+              <Col md="4">
+                <Button variant="raised" type="submit">
+                  Submit
+                </Button>
+              </Col>
+            </Row>
+            <Divider />
+            <Row>
+              <Col md="12">
+                <legend>Description</legend>
+              </Col>
+            </Row>
+            <Row>
+              <Col md="8" style={{ paddingLeft: "75px" }}>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: this.state.form.description
+                  }}
+                />
+              </Col>
+              <Col md="4" style={{ paddingLeft: "75px" }}>
+                <RadioBody
+                  radioButtons={[
+                    { name: "register", label: "Lead" },
+                    { name: "register", label: "Follow" },
+                    { name: "register", label: "Both" }
+                  ]}
+                  className="md-radio"
+                />
+                <Input
+                  label="Email Address"
+                  type="email"
+                  defaultValue="Validation error"
+                />
+              </Col>
+            </Row>
           </Form>
         </Panel>
       </div>
