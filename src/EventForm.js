@@ -1,13 +1,20 @@
 import React, { Component } from "react";
-import Row from "muicss/lib/react/row";
-import Col from "muicss/lib/react/col";
-import Form from "muicss/lib/react/form";
-import Button from "muicss/lib/react/button";
-import Input from "muicss/lib/react/input";
-import Panel from "muicss/lib/react/panel";
-import Divider from "muicss/lib/react/divider";
-import RadioBody from "./Radio";
+import PropTypes from "prop-types";
+import { withStyles } from "material-ui/styles";
+import Grid from "material-ui/Grid";
+import Button from "material-ui/Button";
+import TextField from "material-ui/TextField";
 import "./material-form.css";
+
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+    marginTop: "40px"
+  },
+  button: {
+    margin: theme.spacing.unit
+  }
+});
 
 class EventForm extends Component {
   constructor(props) {
@@ -26,60 +33,66 @@ class EventForm extends Component {
   }
 
   render() {
+    const { classes } = this.props;
     return (
-      <div style={{ marginTop: "40px" }}>
-        <header className="App App-header">
-          <h1 className="App-title">{this.state.form.title}</h1>
-        </header>
-        <Panel>
-          <Form onSubmit={() => this.handleSubmit}>
-            <Row>
-              <Col md="8" />
-              <Col md="4">
-                <Button
-                  style={{ float: "right" }}
-                  variant="raised"
-                  type="submit"
-                >
-                  Submit
-                </Button>
-              </Col>
-            </Row>
-            <Divider />
-            <Row>
-              <Col md="12">
-                <legend>Description</legend>
-              </Col>
-            </Row>
-            <Row>
-              <Col md="8" style={{ paddingLeft: "75px" }}>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: this.state.form.description
-                  }}
-                />
-              </Col>
-              <Col md="4" style={{ paddingLeft: "75px" }}>
-                <RadioBody
-                  radioButtons={[
-                    { name: "register", label: "Lead" },
-                    { name: "register", label: "Follow" },
-                    { name: "register", label: "Both" }
-                  ]}
-                  className="md-radio"
-                />
-                <Input
-                  label="Email Address"
-                  type="email"
-                  defaultValue="Validation error"
-                />
-              </Col>
-            </Row>
-          </Form>
-        </Panel>
+      <div className={classes.root}>
+        <Grid container spacing={16}>
+          <Grid item xs={12}>
+            <header className="App App-header">
+              <h1 className="App-title">{this.state.form.title}</h1>
+            </header>
+          </Grid>
+
+          <form onSubmit={() => this.handleSubmit}>
+            <Grid item xs={8} />
+            <Grid item xs={4}>
+              <Button
+                variant="raised"
+                color="primary"
+                className={classes.button}
+                style={{ float: "right" }}
+                type="submit"
+              >
+                Register
+              </Button>
+            </Grid>
+
+            <Grid item xs={12}>
+              <legend>Description</legend>
+            </Grid>
+            <Grid item xs={8} style={{ paddingLeft: "75px" }}>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: this.state.form.description
+                }}
+              />
+            </Grid>
+            <Grid item xs={4} style={{ paddingLeft: "75px" }}>
+              {/*
+            <Input
+              s={12}
+              type="select"
+              label="Materialize Select"
+              defaultValue="Lead"
+            >
+              <option value="Lead">Lead</option>
+              <option value="Follow">Follow</option>
+              <option value="Both">Lead & Follow</option>
+            </Input>
+          */}
+              <TextField
+                label="Email"
+                type="email"
+                className={classes.textField}
+              />
+            </Grid>
+          </form>
+        </Grid>
       </div>
     );
   }
 }
-
-export default EventForm;
+EventForm.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+export default withStyles(styles)(EventForm);

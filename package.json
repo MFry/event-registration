@@ -5,17 +5,18 @@
   "dependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
+    "material-ui": "^1.0.0-beta.43",
     "muicss": "^0.9.39-rc1",
     "prop-types": "^15.6.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-scripts": "1.1.4",
-    "react-test-renderer": "^16.2.0"
+    "react-test-renderer": "^16.2.0",
+    "react-validation": "^3.0.7"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css":
-      "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
@@ -35,6 +36,8 @@
     "prettier-eslint": "^8.8.1"
   },
   "jest": {
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }
