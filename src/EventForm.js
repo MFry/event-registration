@@ -80,14 +80,18 @@ class EventForm extends Component {
             <Button
               variant="raised"
               color="primary"
-              className={[classes.registration, classes.registerButton]}
+              className={`${classes.registration} ${classes.registerButton}`}
               type="submit"
             >
               Register
             </Button>
           </Grid>
 
-          <Grid item xs={12} className={[classes.formSpacing, classes.content]}>
+          <Grid
+            item
+            xs={12}
+            className={`${classes.formSpacing} ${classes.content}`}
+          >
             <Typography variant="headline" component="h3">
               Description
             </Typography>
@@ -113,7 +117,7 @@ class EventForm extends Component {
                 </Moment>
                 <br />
                 <Button size="small">
-                  <i class="material-icons" style={{ paddingRight: "8px" }}>
+                  <i className="material-icons" style={{ paddingRight: "8px" }}>
                     today
                   </i>
                   Add to calendar
@@ -129,7 +133,7 @@ class EventForm extends Component {
                 {this.state.form.address.zipcode}
                 <br />
                 <Button size="small">
-                  <i class="material-icons" style={{ paddingRight: "8px" }}>
+                  <i className="material-icons" style={{ paddingRight: "8px" }}>
                     add_location
                   </i>
                   Get Directions
@@ -151,7 +155,7 @@ class EventForm extends Component {
             <TextField
               label="Email"
               type="email"
-              className={(classes.textField, classes.registration)}
+              className={`${classes.textField} ${classes.registration}`}
             />
           </Grid>
         </Grid>
