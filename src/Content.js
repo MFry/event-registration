@@ -1,9 +1,20 @@
 import React from "react";
+import Paper from "material-ui/Paper";
 import EventForm from "./EventForm";
-import dummyContent from "./Demo/dummyData";
+import dummyContent from "./demo/dummyData";
 
 const Content = () => (
-  <EventForm title={dummyContent.title} description={dummyContent.content} />
+  <div className="container">
+    <Paper elevation={1}>
+      <EventForm
+        title={dummyContent.title}
+        description={dummyContent.content}
+        startDateTime={dummyContent.startDate}
+        endDateTime={dummyContent.endDate}
+        address={dummyContent.address}
+      />
+    </Paper>
+  </div>
 );
 
 export default Content;
