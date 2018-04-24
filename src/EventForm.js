@@ -64,6 +64,7 @@ class EventForm extends Component {
   }
 
   render() {
+    const dash = <span>—</span>;
     const { classes } = this.props;
     return (
       <form className={classes.root} onSubmit={() => this.handleSubmit}>
@@ -91,6 +92,7 @@ class EventForm extends Component {
               Description
             </Typography>
           </Grid>
+          <br />
           <Grid item xs={8} className={classes.content}>
             <div
               dangerouslySetInnerHTML={{
@@ -105,7 +107,7 @@ class EventForm extends Component {
                 <Moment format="ddd MMM D, YYYY h:mm A">
                   {this.state.form.date.start}
                 </Moment>{" "}
-                - <br />
+                {dash} <br />
                 <Moment format="ddd MMM D, YYYY h:mm A">
                   {this.state.form.date.end}
                 </Moment>
@@ -126,6 +128,12 @@ class EventForm extends Component {
                 {this.state.form.address.city}, {this.state.form.address.state}{" "}
                 {this.state.form.address.zipcode}
                 <br />
+                <Button size="small">
+                  <i class="material-icons" style={{ paddingRight: "8px" }}>
+                    add_location
+                  </i>
+                  Get Directions
+                </Button>
               </Typography>
             </Paper>
             {/*
