@@ -1,4 +1,12 @@
 const title = `All Levels and Intermediate Tango Jump Start w/ Emily Webb`;
+const startDate = "2018-05-01T18:00-0900";
+const endDate = "2018-05-01T21:00-0900";
+const address = {
+  street: "333 W. 7th Ave ",
+  city: "Anchorage",
+  state: "Alaska",
+  zipcode: "99501"
+};
 const content = `
 Are you ready to solidify intermediate level and start upping your dance game?<br />
 <br />
@@ -46,4 +54,4 @@ Thousands of students across the US and Canada have benefited from Emily's dynam
 <br />
 Emily has completed multiple teachers trainings in and out of dance, is a certified instructor of Krav Maga (martial art) and has a BS in Equine Science with a specialty in teaching. She has been seen teaching at nationally recognized events such as the Portland Alt Tango Festival, Denver Fusion Exchange , Las Vegas Fusion Exchange, Atomic Fusion Festival, Massive Blues Recess, Seattle Fusion Festival, Mission Fusion Extravaganza, DJX Fusion Weekend, The Fusion Project and more.<br />
 `;
-export default { title, content };
+export default { title, content, startDate, endDate, address };
