@@ -5,7 +5,12 @@ import Grid from "material-ui/Grid";
 import Typography from "material-ui/Typography";
 import Paper from "material-ui/Paper";
 import Button from "material-ui/Button";
+import Divider from "material-ui/Divider";
 import TextField from "material-ui/TextField";
+import Input, { InputLabel } from "material-ui/Input";
+import { MenuItem } from "material-ui/Menu";
+import { FormControl, FormHelperText } from "material-ui/Form";
+import Select from "material-ui/Select";
 import Moment from "react-moment";
 import "./material-form.css";
 
@@ -36,6 +41,12 @@ const styles = theme => ({
     boxSizing: "border-box",
     textAlign: "center",
     height: "3rem"
+  },
+  stickyHeader: {
+    position: "sticky",
+    backgroundColor: "white",
+    top: 0,
+    zIndex: 9999
   }
 });
 
@@ -45,6 +56,7 @@ class EventForm extends Component {
     const { title, description, startDateTime, endDateTime, address } = props;
     this.state = {
       value: "",
+      roleValue: "",
       form: {
         title,
         description,
@@ -74,6 +86,9 @@ class EventForm extends Component {
               <h1 className="App-title">{this.state.form.title}</h1>
             </header>
           </Grid>
+        </Grid>
+
+        <Grid container className={classes.stickyHeader}>
           <Grid item xs={12} className={classes.formSpacing} />
           <Grid item xs={8} className={classes.content} />
           <Grid item xs={4} className={classes.content}>
@@ -86,7 +101,12 @@ class EventForm extends Component {
               Register
             </Button>
           </Grid>
+          <Grid item xs={12} className={classes.formSpacing}>
+            <Divider />
+          </Grid>
+        </Grid>
 
+        <Grid container>
           <Grid
             item
             xs={12}
@@ -104,6 +124,7 @@ class EventForm extends Component {
               }}
             />
           </Grid>
+
           <Grid item xs={4} className={classes.content}>
             <Paper elevation={0}>
               <Typography variant="subheading">Date and Time</Typography>
@@ -140,23 +161,38 @@ class EventForm extends Component {
                 </Button>
               </Typography>
             </Paper>
-            {/*
-            <Input
-              s={12}
-              type="select"
-              label="Materialize Select"
-              defaultValue="Lead"
-            >
-              <option value="Lead">Lead</option>
-              <option value="Follow">Follow</option>
-              <option value="Both">Lead & Follow</option>
-            </Input>
-          */}
-            <TextField
-              label="Email"
-              type="email"
-              className={`${classes.textField} ${classes.registration}`}
-            />
+            <Paper elevation={0}>
+              <FormControl
+                className={`${classes.formControl} ${classes.registration}`}
+              >
+                <InputLabel htmlFor="role-picker">Role</InputLabel>
+                <Select
+                  value={this.state.roleValue}
+                  onChange={e => {
+                    this.setState({ roleValue: e.target.value });
+                  }}
+                  inputProps={{
+                    name: "Role(s)",
+                    id: "role-picker"
+                  }}
+                >
+                  <MenuItem value="">
+                    <em>None</em>
+                  </MenuItem>
+                  <MenuItem value="Lead">Lead</MenuItem>
+                  <MenuItem value="Follow">Follow</MenuItem>
+                  <MenuItem value="Lead & Follow">Lead and Follow</MenuItem>
+                </Select>
+                <FormHelperText>Role and couple registration.</FormHelperText>
+              </FormControl>
+            </Paper>
+            <Paper elevation={0}>
+              <TextField
+                label="Email"
+                type="email"
+                className={`${classes.textField} ${classes.registration}`}
+              />
+            </Paper>
           </Grid>
         </Grid>
       </form>
