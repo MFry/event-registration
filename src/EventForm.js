@@ -47,6 +47,9 @@ const styles = theme => ({
     backgroundColor: "white",
     top: 0,
     zIndex: 9999
+  },
+  footer: {
+    height: "10vh"
   }
 });
 
@@ -193,6 +196,9 @@ class EventForm extends Component {
                 className={`${classes.textField} ${classes.registration}`}
               />
             </Paper>
+          </Grid>
+          <Grid item xs={12}>
+            <div className={classes.footer} />
           </Grid>
         </Grid>
       </form>
