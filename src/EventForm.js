@@ -179,7 +179,11 @@ class EventForm extends Component {
             </Typography>
           </Grid>
           <br />
-          <Grid item xs={8} className={classes.content}>
+          <Grid
+            item
+            xs={8}
+            className={`${classes.content} ${classes.formSpacing}`}
+          >
             <div
               dangerouslySetInnerHTML={{
                 __html: this.state.form.description
