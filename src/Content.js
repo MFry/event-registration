@@ -12,6 +12,8 @@ const Content = () => (
         startDateTime={dummyContent.startDate}
         endDateTime={dummyContent.endDate}
         address={dummyContent.address}
+        openSlots={dummyContent.openSlots}
+        maxSlots={dummyContent.maxSlots}
       />
     </Paper>
   </div>

@@ -7,6 +7,8 @@ const address = {
   state: "Alaska",
   zipcode: "99501"
 };
+const openSlots = 9;
+const maxSlots = 25;
 const content = `
 Are you ready to solidify intermediate level and start upping your dance game?<br />
 <br />
@@ -54,4 +56,12 @@ Thousands of students across the US and Canada have benefited from Emily's dynam
 <br />
 Emily has completed multiple teachers trainings in and out of dance, is a certified instructor of Krav Maga (martial art) and has a BS in Equine Science with a specialty in teaching. She has been seen teaching at nationally recognized events such as the Portland Alt Tango Festival, Denver Fusion Exchange , Las Vegas Fusion Exchange, Atomic Fusion Festival, Massive Blues Recess, Seattle Fusion Festival, Mission Fusion Extravaganza, DJX Fusion Weekend, The Fusion Project and more.<br />
 `;
-export default { title, content, startDate, endDate, address };
+export default {
+  title,
+  content,
+  startDate,
+  endDate,
+  address,
+  openSlots,
+  maxSlots
+};
