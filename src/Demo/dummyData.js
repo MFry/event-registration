@@ -7,6 +7,10 @@ const address = {
   state: "Alaska",
   zipcode: "99501"
 };
+const courses = [
+  { value: "class1", label: "Class 1" },
+  { value: "class2", label: "Class 2" }
+];
 const openSlots = 9;
 const maxSlots = 25;
 const content = `
@@ -63,5 +67,6 @@ export default {
   endDate,
   address,
   openSlots,
-  maxSlots
+  maxSlots,
+  courses
 };

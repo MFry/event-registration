@@ -15,6 +15,7 @@ import SvgIcon from "material-ui/SvgIcon";
 import Tooltip from "material-ui/Tooltip";
 import blue from "material-ui/colors/blue";
 import Moment from "react-moment";
+import CourseSelect from "./CourseSelect";
 import "./material-form.css";
 
 const styles = theme => ({
@@ -73,7 +74,8 @@ class EventForm extends Component {
       endDateTime,
       address,
       openSlots,
-      maxSlots
+      maxSlots,
+      courses
     } = props;
     this.state = {
       value: "",
@@ -84,7 +86,8 @@ class EventForm extends Component {
         date: { start: startDateTime, end: endDateTime },
         address,
         openSlots,
-        maxSlots
+        maxSlots,
+        courses
       }
     };
   }
@@ -226,6 +229,9 @@ class EventForm extends Component {
                   Get Directions
                 </Button>
               </Typography>
+            </Paper>
+            <Paper elevation={0}>
+              <CourseSelect courses={this.state.form.courses} />
             </Paper>
             <Paper elevation={0}>
               <FormControl

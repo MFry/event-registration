@@ -14,6 +14,7 @@ const Content = () => (
         address={dummyContent.address}
         openSlots={dummyContent.openSlots}
         maxSlots={dummyContent.maxSlots}
+        courses={dummyContent.courses}
       />
     </Paper>
   </div>
