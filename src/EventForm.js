@@ -16,6 +16,7 @@ import Tooltip from "material-ui/Tooltip";
 import blue from "material-ui/colors/blue";
 import Moment from "react-moment";
 import CourseSelect from "./CourseSelect";
+import googleMapsUrl from "./helpers/maps";
 import "./material-form.css";
 
 const styles = theme => ({
@@ -222,7 +223,10 @@ class EventForm extends Component {
                 {this.state.form.address.city}, {this.state.form.address.state}{" "}
                 {this.state.form.address.zipcode}
                 <br />
-                <Button size="small">
+                <Button
+                  size="small"
+                  href={googleMapsUrl(this.state.form.address)}
+                >
                   <i className="material-icons" style={{ paddingRight: "8px" }}>
                     add_location
                   </i>
