@@ -9,7 +9,9 @@ const address = {
 };
 const courses = [
   { value: "class1", label: "Class 1" },
-  { value: "class2", label: "Class 2" }
+  { value: "class2", label: "Class 2" },
+  { value: "class3", label: "Class 3" },
+  { value: "class4", label: "Class 4" }
 ];
 const openSlots = 9;
 const maxSlots = 25;
