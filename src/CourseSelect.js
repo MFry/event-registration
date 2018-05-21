@@ -21,6 +21,7 @@ const CourseSelect = ({ courses }) => {
       <Select
         isMulti
         name="courses"
+        placeholder="Select courses..."
         closeMenuOnSelect={false}
         components={Animated}
         options={courses}
