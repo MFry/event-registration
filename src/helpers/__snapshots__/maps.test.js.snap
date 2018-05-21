@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Getting a valid url from data Returns a correct url with  1`] = `"https://www.google.com/maps/dir/?api=1&destination=621+W+6th+Ave+Anchorage+Alaska"`;
+
+exports[`Getting a valid url from data Returns the correct url without zipcode 1`] = `"https://www.google.com/maps/dir/?api=1&destination=5000+W+International+Airport+Rd+Anchorage+Alaska"`;
