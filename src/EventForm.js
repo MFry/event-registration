@@ -184,7 +184,8 @@ class EventForm extends Component {
           <br />
           <Grid
             item
-            xs={8}
+            md={8}
+            sm={12}
             className={`${classes.content} ${classes.formSpacing}`}
           >
             <div
@@ -194,7 +195,7 @@ class EventForm extends Component {
             />
           </Grid>
 
-          <Grid item xs={4} className={classes.content}>
+          <Grid item md={4} sm={12} className={classes.content}>
             <Paper elevation={0}>
               <Typography variant="subheading">Date and Time</Typography>
               <Typography paragraph>
