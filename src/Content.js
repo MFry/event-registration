@@ -4,7 +4,7 @@ import EventForm from "./EventForm";
 import dummyContent from "./demo/dummyData";
 
 const Content = () => (
-  <div className="container">
+  <div className="mobile-desktop-container">
     <Paper elevation={1}>
       <EventForm
         title={dummyContent.title}

@@ -12,8 +12,8 @@ $grid-breakpoints: (
 ) !default;
 
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
+  sm: 100%,
+  md: 100%,
   lg: 960px,
   xl: 1140px
 ) !default;
@@ -66,11 +66,17 @@ $container-max-widths: (
   }
 }
 
-.container {
+@mixin container() {
   width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  @media (min-width: map-get($map: $grid-breakpoints, $key: "lg")) {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
   @include make-container-max-widths();
+}
+
+.mobile-desktop-container {
+  @include container();
 }
