@@ -1,7 +1,8 @@
 import React from "react";
-import { withStyles } from "material-ui/styles";
-import { FormControl, FormHelperText } from "material-ui/Form";
-import { InputLabel } from "material-ui/Input";
+import { withStyles } from "@material-ui/core/styles";
+import FormControl from "@material-ui/core/FormControl";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import InputLabel from "@material-ui/core/InputLabel";
 import Select from "react-select";
 import * as Animated from "react-select/lib/animated";
 import PropTypes from "prop-types";
