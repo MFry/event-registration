@@ -1,19 +1,21 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { withStyles } from "material-ui/styles";
-import Grid from "material-ui/Grid";
-import Typography from "material-ui/Typography";
-import Paper from "material-ui/Paper";
-import Button from "material-ui/Button";
-import Divider from "material-ui/Divider";
-import TextField from "material-ui/TextField";
-import Input, { InputLabel } from "material-ui/Input";
-import { MenuItem } from "material-ui/Menu";
-import { FormControl, FormHelperText } from "material-ui/Form";
-import Select from "material-ui/Select";
-import SvgIcon from "material-ui/SvgIcon";
-import Tooltip from "material-ui/Tooltip";
-import blue from "material-ui/colors/blue";
+import { withStyles } from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
+import Paper from "@material-ui/core/Paper";
+import Button from "@material-ui/core/Button";
+import Divider from "@material-ui/core/Divider";
+import TextField from "@material-ui/core/TextField";
+import Input from "@material-ui/core/Input";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import Select from "@material-ui/core/Select";
+import SvgIcon from "@material-ui/core/SvgIcon";
+import Tooltip from "@material-ui/core/Tooltip";
+import blue from "@material-ui/core/colors/blue";
 import Moment from "react-moment";
 import CourseSelect from "./CourseSelect";
 import googleMapsUrl from "./helpers/maps";
@@ -24,6 +26,9 @@ const styles = theme => ({
     flexGrow: 1,
     marginTop: "40px"
   },
+  gridContainer: {
+    minWidth: 0
+  },
   paper: {
     padding: theme.spacing.unit * 2,
     textAlign: "center",
@@ -33,8 +38,14 @@ const styles = theme => ({
     paddingTop: ".5rem"
   },
   content: {
-    paddingLeft: "2.5rem",
-    paddingRight: "2.5rem"
+    overflowWrap: "break-word",
+    whiteSpace: "pre-wrap",
+    [theme.breakpoints.up("sm")]: {
+      paddingLeft: "2.5rem",
+      paddingRight: "2.5rem",
+      overflowWrap: "normal",
+      whiteSpace: "normal"
+    }
   },
   button: {
     margin: theme.spacing.unit
@@ -124,7 +135,7 @@ class EventForm extends Component {
             </header>
           </Grid>
         </Grid>
-
+        {/* Registration Bar */}
         <Grid container className={classes.stickyHeader}>
           <Grid item xs={12} className={classes.formSpacing} />
           <Grid item xs={1} className={classes.content}>
@@ -171,8 +182,8 @@ class EventForm extends Component {
             <Divider />
           </Grid>
         </Grid>
-
-        <Grid container>
+        {/* Registration Bar*/}
+        <Grid container className={`${classes.gridContainer}`}>
           <Grid
             item
             xs={12}
