@@ -17,6 +17,7 @@ import SvgIcon from "@material-ui/core/SvgIcon";
 import Tooltip from "@material-ui/core/Tooltip";
 import blue from "@material-ui/core/colors/blue";
 import Moment from "react-moment";
+import RegistrationBar from "./RegistrationBar";
 import CourseSelect from "./CourseSelect";
 import googleMapsUrl from "./helpers/maps";
 import "./material-form.css";
@@ -25,9 +26,6 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
     marginTop: "40px"
-  },
-  gridContainer: {
-    minWidth: 0
   },
   paper: {
     padding: theme.spacing.unit * 2,
@@ -38,9 +36,11 @@ const styles = theme => ({
     paddingTop: ".5rem"
   },
   content: {
+    textAlign: "center",
     overflowWrap: "break-word",
     whiteSpace: "pre-wrap",
     [theme.breakpoints.up("sm")]: {
+      textAlign: "left",
       paddingLeft: "2.5rem",
       paddingRight: "2.5rem",
       overflowWrap: "normal",
@@ -135,55 +135,8 @@ class EventForm extends Component {
             </header>
           </Grid>
         </Grid>
-        {/* Registration Bar */}
-        <Grid container className={classes.stickyHeader}>
-          <Grid item xs={12} className={classes.formSpacing} />
-          <Grid item xs={1} className={classes.content}>
-            <Grid container style={{ alignItems: "center", height: "100%" }}>
-              <Tooltip title="Share this event" placement="bottom">
-                <ShareSvgIcon
-                  className={classes.menuIcons}
-                  onClick={e => {
-                    console.log(e.target);
-                  }}
-                />
-              </Tooltip>
-            </Grid>
-          </Grid>
-          <Grid item xs={2} className={classes.content}>
-            <Grid container style={{ alignItems: "center", height: "100%" }}>
-              <Tooltip title="Slots open" placement="bottom">
-                <GroupSvgIcon
-                  className={classes.menuIcons}
-                  style={{ cursor: "default" }}
-                  onClick={e => {
-                    console.log(e.target);
-                  }}
-                />
-              </Tooltip>
-              <div style={{ paddingLeft: "1.5rem" }}>
-                {this.state.form.openSlots} / {this.state.form.maxSlots}
-              </div>
-            </Grid>
-          </Grid>
-
-          <Grid item xs={5} />
-          <Grid item xs={4} className={classes.content}>
-            <Button
-              variant="raised"
-              color="primary"
-              className={`${classes.registration} ${classes.registerButton}`}
-              type="submit"
-            >
-              Register
-            </Button>
-          </Grid>
-          <Grid item xs={12} className={classes.formSpacing}>
-            <Divider />
-          </Grid>
-        </Grid>
-        {/* Registration Bar*/}
-        <Grid container className={`${classes.gridContainer}`}>
+        <RegistrationBar form={this.state.form} />
+        <Grid container>
           <Grid
             item
             xs={12}
@@ -197,17 +150,17 @@ class EventForm extends Component {
           <Grid
             item
             md={8}
-            sm={12}
+            xs={12}
             className={`${classes.content} ${classes.formSpacing}`}
           >
-            <div
+            <Typography
               dangerouslySetInnerHTML={{
                 __html: this.state.form.description
               }}
             />
           </Grid>
 
-          <Grid item md={4} sm={12} className={classes.content}>
+          <Grid item md={4} xs={12} className={classes.content}>
             <Paper elevation={0}>
               <Typography variant="subheading">Date and Time</Typography>
               <Typography paragraph>
