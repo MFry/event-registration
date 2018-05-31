@@ -33,9 +33,11 @@ const styles = theme => ({
     [theme.breakpoints.up("sm")]: {
       textAlign: "left",
       paddingLeft: "2.5rem",
-      paddingRight: "2.5rem",
       overflowWrap: "normal",
       whiteSpace: "normal"
+    },
+    [theme.breakpoints.up("md")]: {
+      paddingRight: "2.5rem"
     }
   },
   formSpacing: {
@@ -66,7 +68,7 @@ const RegistrationBar = ({ classes, form }) => (
   <Grid container className={classes.stickyHeader}>
     {/*Spacing*/}
     <Grid item xs={12} className={`${classes.formSpacing}`} />
-    <Grid item xs={1} className={`${classes.content}`}>
+    <Grid item sm={1} xs={2} className={`${classes.content}`}>
       <Grid container className={`${classes.iconSpace}`}>
         <Tooltip title="Share this event" placement="bottom">
           <ShareSvgIcon
@@ -95,7 +97,7 @@ const RegistrationBar = ({ classes, form }) => (
       </Grid>
     </Grid>
 
-    <Grid item xs={5} />
+    <Grid item sm={5} xs={2} />
     <Grid item xs={4} className={classes.content}>
       <Button
         variant="raised"
