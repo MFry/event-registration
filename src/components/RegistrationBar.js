@@ -32,12 +32,12 @@ const styles = theme => ({
     whiteSpace: "pre-wrap",
     [theme.breakpoints.up("sm")]: {
       textAlign: "left",
-      paddingLeft: "2.5rem",
+      paddingRight: "2.5rem",
       overflowWrap: "normal",
       whiteSpace: "normal"
     },
     [theme.breakpoints.up("md")]: {
-      paddingRight: "2.5rem"
+      paddingLeft: "2.5rem"
     }
   },
   formSpacing: {
