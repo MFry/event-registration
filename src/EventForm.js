@@ -13,8 +13,8 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 import Select from "@material-ui/core/Select";
 import blue from "@material-ui/core/colors/blue";
 import Moment from "react-moment";
-import RegistrationBar from "./RegistrationBar";
-import CourseSelect from "./CourseSelect";
+import RegistrationBar from "./components/RegistrationBar";
+import CourseSelect from "./components/CourseSelect";
 import googleMapsUrl from "./helpers/maps";
 import "./material-form.css";
 

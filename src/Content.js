@@ -35,7 +35,7 @@ class ContentDesktopMobile extends Component {
   }
 
   render() {
-    if (this.state.width > 600) {
+    if (this.state.width > 980) {
       return (
         <div className="mobile-desktop-container">
           <Paper elevation={1}>{this.props.children}</Paper>
