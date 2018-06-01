@@ -32,6 +32,8 @@ const GroupSvgIcon = props => (
   </SvgIcon>
 );
 
+/*
+// Removed function to avoid feature creep
 const ClassOpeningsInfo = ({ classes, form, ...props }) => (
   <Tooltip title="Slots open" placement="bottom">
     <GroupSvgIcon
@@ -43,6 +45,7 @@ const ClassOpeningsInfo = ({ classes, form, ...props }) => (
     />
   </Tooltip>
 );
+*/
 
 const styles = theme => ({
   stickyHeader: {

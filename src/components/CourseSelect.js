@@ -1,7 +1,7 @@
 import React from "react";
-import { withStyles } from "@material-ui/core/styles";
 import FormControl from "@material-ui/core/FormControl";
-import FormHelperText from "@material-ui/core/FormHelperText";
+// Possible future addition
+// import FormHelperText from "@material-ui/core/FormHelperText";
 import InputLabel from "@material-ui/core/InputLabel";
 import Select from "react-select";
 import * as Animated from "react-select/lib/animated";
@@ -24,6 +24,7 @@ const CourseSelect = ({ courses }) => {
         name="courses"
         placeholder="Select courses..."
         closeMenuOnSelect={false}
+        autoBlur
         components={Animated}
         options={courses}
         styles={styles.select}
