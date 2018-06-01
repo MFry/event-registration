@@ -21,7 +21,9 @@ import "./material-form.css";
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    marginTop: "40px"
+    [theme.breakpoints.up("sm")]: {
+      marginTop: "40px"
+    }
   },
   paper: {
     padding: theme.spacing.unit * 2,
