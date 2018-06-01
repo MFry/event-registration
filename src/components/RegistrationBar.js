@@ -50,7 +50,7 @@ const styles = theme => ({
     backgroundColor: "white",
     bottom: 0,
     zIndex: 9999,
-    [theme.breakpoints.up("sm")]: {
+    [theme.breakpoints.up("md")]: {
       position: "sticky",
       top: 0
     }
@@ -95,7 +95,7 @@ const RegistrationBar = ({ classes, form }) => (
   <Grid container className={classes.stickyHeader}>
     {/*Spacing*/}
     <Grid item xs={12}>
-      <Hidden smUp>
+      <Hidden mdUp>
         <Divider />
       </Hidden>
     </Grid>
