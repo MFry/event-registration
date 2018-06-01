@@ -6,8 +6,8 @@ cache:
   directories:
     - "node_modules"
 script:
-  - yarn run test
   - yarn run build-css
+  - yarn run test
   - yarn run build
 branches:
   only:
