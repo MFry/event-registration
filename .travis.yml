@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "lts/*"
+cache:
+  yarn: true
+  directories:
+    - "node_modules"
+script:
+  - yarn run test
+  - yarn run build-css
+  - yarn run build
+branches:
+  only:
+    - master
