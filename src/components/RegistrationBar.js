@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
+import Hidden from "@material-ui/core/Hidden";
 import SvgIcon from "@material-ui/core/SvgIcon";
 import Tooltip from "@material-ui/core/Tooltip";
 import Button from "@material-ui/core/Button";
@@ -45,10 +46,14 @@ const ClassOpeningsInfo = ({ classes, form, ...props }) => (
 
 const styles = theme => ({
   stickyHeader: {
-    position: "sticky",
+    position: "fixed",
     backgroundColor: "white",
-    top: 0,
-    zIndex: 9999
+    bottom: 0,
+    zIndex: 9999,
+    [theme.breakpoints.up("sm")]: {
+      position: "sticky",
+      top: 0
+    }
   },
   content: {
     textAlign: "center",
@@ -89,6 +94,11 @@ const styles = theme => ({
 const RegistrationBar = ({ classes, form }) => (
   <Grid container className={classes.stickyHeader}>
     {/*Spacing*/}
+    <Grid item xs={12}>
+      <Hidden smUp>
+        <Divider />
+      </Hidden>
+    </Grid>
     <Grid item xs={12} className={`${classes.formSpacing}`} />
     <Grid item sm={1} xs={2} className={`${classes.content}`}>
       <Grid container className={`${classes.iconSpace}`}>
