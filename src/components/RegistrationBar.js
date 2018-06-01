@@ -95,6 +95,7 @@ const RegistrationBar = ({ classes, form }) => (
         <ShareButton form={form} classes={classes} />
       </Grid>
     </Grid>
+    {/*
     <Grid item sm={2} xs={2} className={`${classes.content}`}>
       <Grid container className={`${classes.iconSpace}`}>
         <Grid item xs={12}>
@@ -105,8 +106,8 @@ const RegistrationBar = ({ classes, form }) => (
         </Grid>
       </Grid>
     </Grid>
-
-    <Grid item sm={5} xs={2} />
+    */}
+    <Grid item sm={7} xs={4} />
     <Grid item sm={4} xs={6} className={classes.content}>
       <Button
         variant="raised"
