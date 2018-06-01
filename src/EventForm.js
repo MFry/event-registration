@@ -31,6 +31,9 @@ const styles = theme => ({
   formSpacing: {
     paddingTop: ".5rem"
   },
+  contentContainers: {
+    flexDirection: "row-reverse"
+  },
   content: {
     textAlign: "center",
     overflowWrap: "break-word",
@@ -122,7 +125,7 @@ class EventForm extends Component {
           </Grid>
         </Grid>
         <RegistrationBar form={this.state.form} />
-        <Grid container>
+        <Grid container className={`${classes.contentContainers}`}>
           <Grid
             item
             xs={12}
@@ -133,20 +136,8 @@ class EventForm extends Component {
             </Typography>
           </Grid>
           <br />
-          <Grid
-            item
-            md={8}
-            xs={12}
-            className={`${classes.content} ${classes.formSpacing}`}
-          >
-            <Typography
-              dangerouslySetInnerHTML={{
-                __html: this.state.form.description
-              }}
-            />
-          </Grid>
 
-          <Grid item md={4} xs={12} className={classes.content}>
+          <Grid item md={4} xs={12} className={`${classes.content}`}>
             <Paper elevation={0}>
               <Typography variant="subheading">Date and Time</Typography>
               <Typography paragraph>
@@ -220,6 +211,18 @@ class EventForm extends Component {
                 className={`${classes.textField} ${classes.registration}`}
               />
             </Paper>
+          </Grid>
+          <Grid
+            item
+            md={8}
+            xs={12}
+            className={`${classes.content} ${classes.formSpacing}`}
+          >
+            <Typography
+              dangerouslySetInnerHTML={{
+                __html: this.state.form.description
+              }}
+            />
           </Grid>
           <Grid item xs={12}>
             <div className={classes.footer} />
