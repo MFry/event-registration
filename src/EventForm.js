@@ -15,6 +15,7 @@ import blue from "@material-ui/core/colors/blue";
 import Moment from "react-moment";
 import RegistrationBar from "./components/RegistrationBar";
 import CourseSelect from "./components/CourseSelect";
+import EmailInputField from "./components/EmailInput";
 import googleMapsUrl from "./helpers/maps";
 import "./material-form.css";
 
@@ -93,6 +94,11 @@ class EventForm extends Component {
     this.state = {
       value: "",
       roleValue: "",
+      formValues: {
+        roleType: "",
+        email: "",
+        classesSelected: []
+      },
       form: {
         title,
         description,
@@ -184,6 +190,7 @@ class EventForm extends Component {
             <Paper elevation={0}>
               <FormControl
                 className={`${classes.formControl} ${classes.registration}`}
+                required
               >
                 <InputLabel htmlFor="role-picker">Role</InputLabel>
                 <Select
@@ -207,11 +214,7 @@ class EventForm extends Component {
               </FormControl>
             </Paper>
             <Paper elevation={0}>
-              <TextField
-                label="Email"
-                type="email"
-                className={`${classes.textField} ${classes.registration}`}
-              />
+              <EmailInputField />
             </Paper>
           </Grid>
           <Grid
