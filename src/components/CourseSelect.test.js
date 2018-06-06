@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { render } from "enzyme";
 import CourseSelect from "./CourseSelect";
 
 it("renders without crashing", () => {
@@ -13,4 +14,10 @@ it("renders without crashing", () => {
   const div = document.createElement("div");
   ReactDOM.render(<CourseSelect courses={courses} />, div);
   ReactDOM.unmountComponentAtNode(div);
+});
+
+it("Matches the snapshot", () => {
+  const courses = [];
+  const wrapper = render(<CourseSelect courses={courses} />);
+  expect(wrapper).toMatchSnapshot();
 });

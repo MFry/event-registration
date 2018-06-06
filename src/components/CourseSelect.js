@@ -25,6 +25,7 @@ const CourseSelect = ({ courses }) => {
         placeholder="Select courses..."
         closeMenuOnSelect={false}
         autoBlur
+        required
         components={Animated}
         options={courses}
         styles={styles.select}
