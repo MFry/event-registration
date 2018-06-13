@@ -14,9 +14,9 @@ const server = new Hapi.Server({
 
 //Connect to db
 mongoose.connect(
-  `mongodb://${config.mongodb.username}:${
-    config.mongodb.password
-  }@ds111441.mlab.com:11441/tango_events`
+  `mongodb://${config.mongodb.username}:${config.mongodb.password}@${
+    config.mongodb.url
+  }`
 );
 mongoose.connection.once("open", () => {
   console.log("Successful connection to db.");
