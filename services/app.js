@@ -2,6 +2,7 @@ const Hapi = require("hapi");
 const mongoose = require("mongoose");
 const { graphqlHapi, graphiqlHapi } = require("apollo-server-hapi");
 const schema = require("./graphql/schema");
+const Event = require("./models/Events.js");
 //Settings up environmental variables
 const env = process.env.NODE_ENV || "dev";
 const config = require("./config/config")[env];
@@ -26,6 +27,39 @@ server.route({
   path: "/",
   handler: (request, h) => {
     return h.response("Server is up.").code(200);
+  }
+});
+server.route({
+  method: "GET",
+  path: "/api/v1/events",
+  handler: (request, h) => {
+    return Event.find();
+  }
+});
+server.route({
+  method: "POST",
+  path: "/api/v1/events",
+  handler: (request, h) => {
+    const {
+      title,
+      teacher,
+      description,
+      startDate,
+      address,
+      maxSlots,
+      courses
+    } = request.payload;
+    const event = new Event({
+      title,
+      teacher,
+      description,
+      startDate,
+      address,
+      maxSlots,
+      courses
+    });
+
+    return event.save();
   }
 });
 
