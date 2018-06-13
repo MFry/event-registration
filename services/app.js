@@ -2,9 +2,9 @@ const Hapi = require("hapi");
 const mongoose = require("mongoose");
 const { graphqlHapi, graphiqlHapi } = require("apollo-server-hapi");
 const schema = require("./graphql/schema");
-
+//Settings up environmental variables
 const env = process.env.NODE_ENV || "dev";
-const config = require("./config")[env];
+const config = require("./config/config")[env];
 // Init Server
 const server = new Hapi.Server({
   port: config.server.port,
