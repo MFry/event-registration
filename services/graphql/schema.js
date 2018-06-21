@@ -1,6 +1,7 @@
 // Example: https://www.apollographql.com/docs/graphql-tools/#example
 const { makeExecutableSchema } = require("graphql-tools");
 // const Painting = require("./../models/Painting");
+const Event = require("./../models/Events.js");
 
 // The GraphQL schema in string form
 const typeDefs = `
@@ -36,7 +37,7 @@ const typeDefs = `
 `;
 
 const resolvers = {
-  Query: { Events: () => [events] }
+  Query: { Events: () => Event.find() }
 };
 
 module.exports = makeExecutableSchema({
