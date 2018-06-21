@@ -1,6 +1,8 @@
 import React from "react";
-import Content from "./Content";
+import Content from "./Event";
 import "./App.css";
+
+//TODO: Make app into a landing page for creation, administration and viewing of events
 
 const App = () => (
   <div>

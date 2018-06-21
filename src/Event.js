@@ -3,7 +3,7 @@ import Paper from "@material-ui/core/Paper";
 import EventForm from "./EventForm";
 import dummyContent from "./demo/dummyData";
 
-const Content = () => (
+const Event = () => (
   <ContentDesktopMobile>
     <EventForm
       title={dummyContent.title}
@@ -47,4 +47,4 @@ class ContentDesktopMobile extends Component {
   }
 }
 
-export default Content;
+export default Event;

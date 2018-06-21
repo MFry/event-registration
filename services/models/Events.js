@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 // Mongoose assigns ID by default to all schemas
-
+// TODO: Add registration start date
 const EventSchema = new Schema({
   title: String,
   teacher: String,
